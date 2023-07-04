@@ -10,6 +10,8 @@ SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 
 [compat]
 julia = "1"
+Distributions = "0.23.3, 0.24, 0.25"
+SpecialFunctions = "0.7.2, 0.8, 0.9, 0.10, 1, 2"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
