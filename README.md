@@ -27,9 +27,9 @@ Also, truncated version is surpported.
 wb = WeibullPareto(α, κ)
 l = 1
 u = 10
-wb_doubly = trunc(wb, l, u)
-wb_left = trunc(wb, l, nothing)
-wb_left = trunc(wb; lower=l)
-wb_right = trunc(wb, nothing, u)
-wb_right = trunc(wb; upper=u)
+wb_doubly = truncated(wb, l, u)
+wb_left = truncated(wb, l, nothing)
+wb_left = truncated(wb; lower=l)
+wb_right = truncated(wb, nothing, u)
+wb_right = truncated(wb; upper=u)
 ```
