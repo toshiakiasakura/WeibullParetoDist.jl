@@ -12,7 +12,7 @@ The Weibull distribution has a property to be power-law if $\alpha$ takes less t
 
 However, when the Weibull distribution is fitted to the data which follows the power-law, the order of estimates of $\theta$ becomes $10{^-3}$ and $10^{-8}$. Also, the strong correlation between $\alpha$ and $\theta$ is observed, which hampers the stable estimation. 
 
-As [Akira et al., 2022](https://pubmed.ncbi.nlm.nih.gov/36137054/) proved in the supplementary material, let $\kappa$ be $\alpha/\theta^\alpha$, and replace $\kappa$ with $\alpha$. At the region of 0 in log-log plot of the distribution, $ \log \bar{F}(k)=-\kappa/\alpha e^{\alpha \log x} $, the slope becomes $-\kappa$, which does not vary so much, and empirically the correlation between $\alpha$ and $\kappa$ becomes very week. 
+As [Akira et al., 2022](https://pubmed.ncbi.nlm.nih.gov/36137054/) proved in the supplementary material, let $\kappa$ be $\alpha/\theta^\alpha$, and replace $\kappa$ with $\alpha$. At the region of 0 in log-log plot of the distribution, $\log \bar{F}(k)=-\kappa/\alpha e^{\alpha \log x} $, the slope becomes $-\kappa$, which does not vary so much, and empirically the correlation between $\alpha$ and $\kappa$ becomes very week. 
 
 In this package, we implemented the above-parameterised version of the Weibull distribution. 
 
@@ -47,24 +47,24 @@ wb_right = truncated(wb; upper=u)
 
 ## Mathematical expression 
 The relationship between $\kappa$ and $\theta$.   
-$ \theta = (\frac{\alpha}{\kappa})^{1/\alpha} $ and $ \kappa=\frac{\alpha}{\theta^\alpha}$.
+$\theta = (\frac{\alpha}{\kappa})^{1/\alpha}$ and $\kappa=\frac{\alpha}{\theta^\alpha}$.
 
 ### Weibull distribution
 
-$ pdf(x) = \kappa x^{\alpha-1}e^{-x^\alpha \kappa/\alpha}$     
-$ cdf(x) = 1-e^{-x^\alpha\kappa/\alpha}$  
+$pdf(x) = \kappa x^{\alpha-1}e^{-x^\alpha \kappa/\alpha}$     
+$cdf(x) = 1-e^{-x^\alpha\kappa/\alpha}$  
 
 ### Left truncated Weibull distribution
 Let $l$ be the left truncation point.  
 
-$ pdf(x) = \kappa x^{\alpha-1}e^{-(x^\alpha - l^\alpha)\kappa/\alpha} $  
-$ cdf(x) = 1 - e^{-(x^\alpha - l^\alpha)\kappa/\alpha} $
+$pdf(x) = \kappa x^{\alpha-1}e^{-(x^\alpha - l^\alpha)\kappa/\alpha} $  
+$cdf(x) = 1 - e^{-(x^\alpha - l^\alpha)\kappa/\alpha} $
 
 ### Doubly truncated Weibull distribution
 Let $r$ be the right truncation point. 
 
-$ pdf(x) = (\kappa x^{\alpha-1}e^{-x^\alpha\kappa/\alpha})/(
+$pdf(x) = (\kappa x^{\alpha-1}e^{-x^\alpha\kappa/\alpha})/(
 {e^{-l^\alpha \kappa/\alpha} - e^{-r^\alpha \kappa/\alpha}}) $  
-$ cdf(x) = (1 - e^{-x^\alpha\kappa/\alpha})/({e^{-l^\alpha \kappa/\alpha} - e^{-r^\alpha \kappa/\alpha}}) $
+$cdf(x) = (1 - e^{-x^\alpha\kappa/\alpha})/({e^{-l^\alpha \kappa/\alpha} - e^{-r^\alpha \kappa/\alpha}}) $
 
 
